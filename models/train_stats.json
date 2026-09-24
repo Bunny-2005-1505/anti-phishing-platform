@@ -1,0 +1,122 @@
+{
+  "url_length": {
+    "legit_mean": 31.86488888888889,
+    "legit_std": 11.903404280426436,
+    "phish_mean": 70.178,
+    "phish_std": 24.497985376218466
+  },
+  "hostname_length": {
+    "legit_mean": 15.047333333333333,
+    "legit_std": 5.005153224320424,
+    "phish_mean": 24.052222222222223,
+    "phish_std": 8.173502002853624
+  },
+  "path_length": {
+    "legit_mean": 10.436,
+    "legit_std": 7.370104066054613,
+    "phish_mean": 28.445777777777778,
+    "phish_std": 14.839273022964749
+  },
+  "num_dots": {
+    "legit_mean": 1.7953333333333332,
+    "legit_std": 0.7596908678181872,
+    "phish_mean": 3.1975555555555557,
+    "phish_std": 1.4927688592312758
+  },
+  "num_hyphens": {
+    "legit_mean": 0.416,
+    "legit_std": 0.656875668297597,
+    "phish_mean": 2.2024444444444446,
+    "phish_std": 1.4970213131501735
+  },
+  "num_at": {
+    "legit_mean": 0.003777777777777778,
+    "legit_std": 0.06135523940884646,
+    "phish_mean": 0.08644444444444445,
+    "phish_std": 0.2810514503808565
+  },
+  "num_underscore": {
+    "legit_mean": 0.09866666666666667,
+    "legit_std": 0.31208695598147523,
+    "phish_mean": 0.616,
+    "phish_std": 0.7735995830688688
+  },
+  "num_percent": {
+    "legit_mean": 0.04555555555555556,
+    "legit_std": 0.21380611569527186,
+    "phish_mean": 0.5033333333333333,
+    "phish_std": 0.7104710740786829
+  },
+  "num_query_params": {
+    "legit_mean": 0.2975555555555556,
+    "legit_std": 0.5446455831575904,
+    "phish_mean": 1.006,
+    "phish_std": 0.9915005457329814
+  },
+  "num_digits": {
+    "legit_mean": 0.7633333333333333,
+    "legit_std": 0.9121147784222596,
+    "phish_mean": 8.629777777777777,
+    "phish_std": 6.480556658265006
+  },
+  "digit_ratio": {
+    "legit_mean": 0.02455362222222222,
+    "legit_std": 0.023855235288979607,
+    "phish_mean": 0.12241113333333334,
+    "phish_std": 0.07625123318037944
+  },
+  "num_subdomains": {
+    "legit_mean": 0.38955555555555554,
+    "legit_std": 0.6233428299150034,
+    "phish_mean": 1.4231111111111112,
+    "phish_std": 1.2033153497919826
+  },
+  "has_ip": {
+    "legit_mean": 0.004888888888888889,
+    "legit_std": 0.06975821470205298,
+    "phish_mean": 0.21133333333333335,
+    "phish_std": 0.40830064720966375
+  },
+  "has_https": {
+    "legit_mean": 0.9242222222222222,
+    "legit_std": 0.26467263255242884,
+    "phish_mean": 0.4677777777777778,
+    "phish_std": 0.49901709745651784
+  },
+  "has_port": {
+    "legit_mean": 0.004222222222222222,
+    "legit_std": 0.06484951254587655,
+    "phish_mean": 0.04733333333333333,
+    "phish_std": 0.21237546117216752
+  },
+  "has_double_slash_redirect": {
+    "legit_mean": 0.029777777777777778,
+    "legit_std": 0.16999359804877073,
+    "phish_mean": 0.1511111111111111,
+    "phish_std": 0.3581979506352891
+  },
+  "is_shortened": {
+    "legit_mean": 0.036,
+    "legit_std": 0.18631179870517084,
+    "phish_mean": 0.17933333333333334,
+    "phish_std": 0.3836748214222089
+  },
+  "suspicious_word_count": {
+    "legit_mean": 0.15022222222222223,
+    "legit_std": 0.38198287505885414,
+    "phish_mean": 1.8217777777777777,
+    "phish_std": 1.3280596932871933
+  },
+  "has_suspicious_tld": {
+    "legit_mean": 0.048,
+    "legit_std": 0.2137909832166157,
+    "phish_mean": 0.40244444444444444,
+    "phish_std": 0.4904460694074192
+  },
+  "num_slashes_path": {
+    "legit_mean": 0.8206666666666667,
+    "legit_std": 0.8960517062621689,
+    "phish_mean": 1.988,
+    "phish_std": 1.42403126358225
+  }
+}

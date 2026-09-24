@@ -1,0 +1,59 @@
+{
+  "best_model": "GradientBoosting",
+  "all_results": {
+    "RandomForest": {
+      "accuracy": 0.9955555555555555,
+      "precision": 0.9955555555555555,
+      "recall": 0.9955555555555555,
+      "f1": 0.9955555555555555,
+      "roc_auc": 0.9998987654320988,
+      "false_positive_rate": 0.0044444444444444444,
+      "inference_latency_ms": 0.049779166664747104,
+      "confusion_matrix": {
+        "tn": 896,
+        "fp": 4,
+        "fn": 4,
+        "tp": 896
+      }
+    },
+    "GradientBoosting": {
+      "accuracy": 0.9983333333333333,
+      "precision": 0.9988876529477196,
+      "recall": 0.9977777777777778,
+      "f1": 0.9983324068927182,
+      "roc_auc": 0.9999049382716049,
+      "false_positive_rate": 0.0011111111111111111,
+      "inference_latency_ms": 0.003388722220228778,
+      "confusion_matrix": {
+        "tn": 899,
+        "fp": 1,
+        "fn": 2,
+        "tp": 898
+      }
+    }
+  },
+  "feature_names": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "num_dots",
+    "num_hyphens",
+    "num_at",
+    "num_underscore",
+    "num_percent",
+    "num_query_params",
+    "num_digits",
+    "digit_ratio",
+    "num_subdomains",
+    "has_ip",
+    "has_https",
+    "has_port",
+    "has_double_slash_redirect",
+    "is_shortened",
+    "suspicious_word_count",
+    "has_suspicious_tld",
+    "num_slashes_path"
+  ],
+  "train_size": 7200,
+  "test_size": 1800
+}

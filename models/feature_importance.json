@@ -1,0 +1,22 @@
+{
+  "num_digits": 0.5484603370183218,
+  "suspicious_word_count": 0.19118750169820836,
+  "url_length": 0.10597276124097839,
+  "path_length": 0.05629603939308596,
+  "num_hyphens": 0.030690098943177455,
+  "num_dots": 0.020973536432140876,
+  "digit_ratio": 0.018084220268768197,
+  "hostname_length": 0.017425024285335843,
+  "has_https": 0.004336368125999141,
+  "num_percent": 0.0023390641537673006,
+  "num_subdomains": 0.001635637242982928,
+  "num_slashes_path": 0.0010149902122107003,
+  "has_suspicious_tld": 0.0007853140613441735,
+  "num_underscore": 0.00043517598620997517,
+  "has_ip": 0.0001622562829764693,
+  "num_query_params": 0.0001622346501350308,
+  "has_port": 3.9440004357450166e-05,
+  "num_at": 0.0,
+  "has_double_slash_redirect": 0.0,
+  "is_shortened": 0.0
+}
