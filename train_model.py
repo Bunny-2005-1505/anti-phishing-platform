@@ -1,19 +1,3 @@
-"""
-train_model.py
-
-Trains classical ML classifiers (Random Forest, Gradient Boosting) on the
-phishing-URL feature table, following the classical-ML baseline from
-Alsarhan, Igried & Alauthman (2023). Picks the best model by F1-score,
-evaluates it on a held-out test set (accuracy, precision, recall, F1,
-false-positive rate, ROC-AUC, and inference latency per URL), and saves:
-
-    models/model.pkl            trained sklearn classifier
-    models/metrics.json         evaluation metrics for the Model Performance page
-    models/feature_importance.json   global feature importances for explain.py
-    models/train_stats.json     per-class per-feature mean/std, used to phrase
-                                 plain-language explanations relative to typical
-                                 legitimate URLs
-"""
 
 import json
 import time
@@ -103,14 +87,11 @@ def main():
     with open(f"{MODELS_DIR}/metrics.json", "w") as f:
         json.dump(metrics_out, f, indent=2)
 
-    # Global feature importance (works for both RF and GB — both expose this)
-    importances = dict(zip(FEATURE_NAMES, best_model.feature_importances_.tolist()))
+     importances = dict(zip(FEATURE_NAMES, best_model.feature_importances_.tolist()))
     importances = dict(sorted(importances.items(), key=lambda kv: kv[1], reverse=True))
     with open(f"{MODELS_DIR}/feature_importance.json", "w") as f:
         json.dump(importances, f, indent=2)
 
-    # Per-class stats, used at inference time to phrase "your URL's value X
-    # is much higher than typical legitimate URLs (avg Y)" explanations.
     stats = {}
     for feat in FEATURE_NAMES:
         stats[feat] = {
