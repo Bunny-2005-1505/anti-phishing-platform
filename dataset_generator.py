@@ -1,30 +1,3 @@
-"""
-dataset_generator.py
-
-Generates a labeled training set that mimics the statistical patterns
-reported for phishing vs. legitimate URLs in the literature this project is
-built on (Alsarhan, Igried & Alauthman, 2023; PhishFind, Mendoza Vega et
-al., 2025) — e.g. phishing URLs tend to be longer, contain more hyphens /
-digits / suspicious keywords, use IP-literal hosts or shorteners more
-often, and use HTTPS less often.
-
-IMPORTANT — read this before your final submission:
-This sandbox has no internet access, so a real dataset (e.g. the UCI
-"Phishing Websites" dataset used in the proposal, or a PhishTank export)
-could not be downloaded here. This generator produces a SYNTHETIC stand-in
-so the full pipeline (train -> evaluate -> explain -> serve) runs end to
-end out of the box. For your actual capstone submission, replace this with
-the real dataset:
-
-    1. Download https://archive.ics.uci.edu/dataset/327/phishing+websites
-       (or a PhishTank / Kaggle phishing-URL CSV with raw URLs).
-    2. If it gives you raw URLs, run each one through
-       feature_extraction.extract_features() to build the same 20-column
-       feature table used here (see FEATURE_NAMES in feature_extraction.py).
-    3. Save it as data/real_dataset.csv with the same column names as
-       generate_dataset() below (feature columns + a "label" column,
-       1 = phishing, 0 = legitimate), then point train_model.py at it.
-"""
 
 import numpy as np
 import pandas as pd
@@ -107,7 +80,6 @@ def generate_dataset(n: int = 9000, seed: int = 42) -> pd.DataFrame:
 
     cols = FEATURE_NAMES + ["label"]
     df = pd.DataFrame(rows, columns=cols)
-    # round count-like columns to ints for realism
     int_cols = [c for c in FEATURE_NAMES if c != "digit_ratio"]
     df[int_cols] = df[int_cols].round().astype(int)
     df = df.sample(frac=1, random_state=seed).reset_index(drop=True)
