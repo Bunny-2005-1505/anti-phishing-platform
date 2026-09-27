@@ -1,18 +1,3 @@
-"""
-feature_extraction.py
-
-Extracts lightweight, fast-to-compute lexical/structural features from a URL
-string alone (no page fetch required), matching the "URL structure, domain
-information" portion of the platform's objective (see project report, sec 4.2).
-
-These are the same broad feature families used by classical phishing-URL
-studies (Alsarhan, Igried & Alauthman, 2023; PhishFind, Mendoza Vega et al.,
-2025): URL length, special-character counts, IP-literal hosts, subdomain
-depth, HTTPS usage, URL-shortener usage, and suspicious keywords/TLDs.
-
-Everything here runs on the URL text only, so it works with zero network
-access and is safe to call at low latency on every request.
-"""
 
 import re
 from urllib.parse import urlparse
@@ -36,7 +21,6 @@ SUSPICIOUS_TLDS = [
 
 IP_PATTERN = re.compile(r"^(\d{1,3}\.){3}\d{1,3}$")
 
-# Order matters: this is the exact feature vector order the model is trained on.
 FEATURE_NAMES = [
     "url_length", "hostname_length", "path_length", "num_dots", "num_hyphens",
     "num_at", "num_underscore", "num_percent", "num_query_params", "num_digits",
@@ -44,9 +28,6 @@ FEATURE_NAMES = [
     "has_double_slash_redirect", "is_shortened", "suspicious_word_count",
     "has_suspicious_tld", "num_slashes_path",
 ]
-
-# Plain-language descriptions used by explain.py to turn a feature name into
-# a sentence a non-technical user can understand.
 FEATURE_DESCRIPTIONS = {
     "url_length": "Overall length of the URL",
     "hostname_length": "Length of the domain/host portion",
