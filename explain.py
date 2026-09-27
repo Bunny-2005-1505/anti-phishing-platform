@@ -35,7 +35,6 @@ class Explainer:
             return self._explain_shap(feature_dict, top_k)
         return self._explain_heuristic(feature_dict, top_k)
 
-    # ---- SHAP path -----------------------------------------------------
     def _explain_shap(self, feature_dict, top_k):
         import numpy as np
 
@@ -56,7 +55,6 @@ class Explainer:
             out.append(self._format_entry(name, feature_dict[name], direction, abs(contrib)))
         return out
 
-    # ---- Heuristic fallback path ---------------------------------------
     def _explain_heuristic(self, feature_dict, top_k):
         ranked = sorted(self.importances.items(), key=lambda kv: kv[1], reverse=True)
 
@@ -68,8 +66,6 @@ class Explainer:
             dist_legit = abs(value - s["legit_mean"]) / s["legit_std"]
             dist_phish = abs(value - s["phish_mean"]) / s["phish_std"]
             direction = "phishing" if dist_phish < dist_legit else "legitimate"
-            # how strongly this feature leans, combining global importance
-            # with how decisively the value sits on one side
             lean = abs(dist_legit - dist_phish)
             score = importance * lean
             scored.append((name, direction, score))
