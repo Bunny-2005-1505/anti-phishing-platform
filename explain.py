@@ -1,24 +1,3 @@
-"""
-explain.py
-
-Turns a raw model verdict into the platform's "awareness moment": a plain-
-language list of which features pushed this particular URL toward phishing
-or legitimate, per the project objective (explainable output at the point
-of detection, grounded in Alsarhan, Igried & Alauthman, 2023).
-
-Explanation strategy:
-  - If the `shap` package is available (it will be on a normal machine /
-    Streamlit Cloud, just not in this sandbox), use SHAP's TreeExplainer for
-    a proper per-instance additive attribution.
-  - Otherwise, fall back to a transparent heuristic: rank features by the
-    model's global feature_importances_, and for each top feature, compare
-    this URL's value against the training set's per-class mean/std to say
-    whether it looks "typical of phishing" or "typical of legitimate" URLs.
-    This keeps the app fully functional with zero extra dependencies.
-
-Either way, the output is the same shape so app.py doesn't need to care
-which path was used.
-"""
 
 import json
 
