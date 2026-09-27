@@ -1,10 +1,3 @@
-"""
-app.py — Anti-Phishing Detection and Awareness Platform
-
-Web-based, real-time, explainable phishing URL detector.
-Flow: URL input -> feature extraction -> ML classifier -> explanation ->
-verdict + awareness cue (see project report sec. 4 / architecture slide).
-"""
 
 import time
 
